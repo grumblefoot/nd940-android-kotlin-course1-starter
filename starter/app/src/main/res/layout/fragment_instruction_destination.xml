@@ -8,36 +8,39 @@ Create a new Instruction destination that includes:
     At least 2 textviews with appropriate information
     A navigation button with actions to navigate to the shoe list screen
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Instructions.Instruction_destination">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        tools:context=".Instructions.InstructionFragment">
 
-        <TextView
-            android:id="@+id/instruction_header_text"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/instruction_header" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <TextView
-            android:id="@+id/instruction_body_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/instruction_body" />
+            <TextView
+                android:id="@+id/instruction_header_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/instruction_header" />
 
-        <Button
-            android:id="@+id/instruction_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/continue_button_text" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/instruction_body_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/instruction_body" />
 
-</FrameLayout>
+            <Button
+                android:id="@+id/instruction_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/continue_button_text" />
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>
