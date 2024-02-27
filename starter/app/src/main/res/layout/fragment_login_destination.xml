@@ -21,10 +21,16 @@ Create a new Login destination.
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.login.LoginViewModel" />
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Login.LoginFragment">
+        tools:context=".login.LoginFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_layout"
@@ -87,7 +93,6 @@ Create a new Login destination.
                 tools:layout_conversion_absoluteWidth="379dp"
                 android:autofillHints="" />
 
-
             <Button
                 android:id="@+id/login_button"
                 android:layout_width="0dp"
@@ -98,7 +103,9 @@ Create a new Login destination.
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/password"
                 tools:layout_conversion_absoluteHeight="48dp"
-                tools:layout_conversion_absoluteWidth="206dp"/>
+                tools:layout_conversion_absoluteWidth="206dp"
+                android:onClick="@{() -> viewModel.onLoginClicked()}"/>
+
 
 
             <Button
@@ -110,7 +117,8 @@ Create a new Login destination.
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/login_button"
                 tools:layout_conversion_absoluteHeight="48dp"
-                tools:layout_conversion_absoluteWidth="206dp"/>
+                tools:layout_conversion_absoluteWidth="206dp"
+                android:onClick="@{() -> viewModel.onNewUserClicked()}"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@
 
     <fragment
         android:id="@+id/login_destination"
-        android:name="com.udacity.shoestore.Login.LoginFragment"
+        android:name="com.udacity.shoestore.login.LoginFragment"
         android:label="fragment_login_destination"
         tools:layout="@layout/fragment_login_destination" >
         <action
