@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome_destination"
-        android:name="com.udacity.shoestore.Welcome.WelcomeFragment"
+        android:name="com.udacity.shoestore.welcome.WelcomeFragment"
         android:label="fragment_welcome_destination"
         tools:layout="@layout/fragment_welcome_destination" >
 
