@@ -3,6 +3,7 @@ package com.udacity.shoestore.shoe
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.*
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -15,13 +16,9 @@ class ShoeFragment : Fragment() {
 
     // Use activityViewModels to share ViewModel across fragments
     private val viewModel: ShoeViewModel by activityViewModels()
+
     private var _binding: FragmentShoeListBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +31,20 @@ class ShoeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.shoe_list_menu, menu)
+            }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.logout -> {
+                        findNavController().navigate(R.id.action_global_login_destination)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner)
 
         // FAB click listener
         binding.fabAddShoe.setOnClickListener {
@@ -60,20 +71,6 @@ class ShoeFragment : Fragment() {
 
             // Add the bound view to the container
             binding.shoeListContainer.addView(shoeItemBinding.root)
-        }
-    }
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.shoe_list_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.logout -> {
-                findNavController().navigate(R.id.action_global_login_destination)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
         }
     }
 

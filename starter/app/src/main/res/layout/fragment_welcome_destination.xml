@@ -12,10 +12,15 @@ Create a new Welcome screen destination that includes:
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.welcome.WelcomeViewModel" />
+    </data>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Welcome.welcome_destination">
+        tools:context=".welcome.WelcomeFragment">
 
 
         <LinearLayout
@@ -42,7 +47,8 @@ Create a new Welcome screen destination that includes:
                 android:id="@+id/welcome_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/welcome_button" />
+                android:text="@string/welcome_button"
+                android:onClick="@{() -> viewModel.onContinueClicked()}"/>
         </LinearLayout>
 
     </FrameLayout>
