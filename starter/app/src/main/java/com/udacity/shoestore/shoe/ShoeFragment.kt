@@ -16,6 +16,7 @@ class ShoeFragment : Fragment() {
 
     // Use activityViewModels to share ViewModel across fragments
     private val viewModel: ShoeViewModel by activityViewModels()
+
     private var _binding: FragmentShoeListBinding? = null
     private val binding get() = _binding!!
 

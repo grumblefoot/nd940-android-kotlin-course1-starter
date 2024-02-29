@@ -36,20 +36,4 @@ class WelcomeFragment : Fragment() {
 
         return binding.root
     }
-        /*
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_welcome_destination, container, false)
-        val loginButton: Button = view.findViewById(R.id.welcome_button)
-        loginButton.setOnClickListener {
-            Timber.d("Welcome button clicked")
-            findNavController().navigate(R.id.action_welcome_destination_to_instruction_destination)
-        }
-
-        return view
-         */
-
-
 }

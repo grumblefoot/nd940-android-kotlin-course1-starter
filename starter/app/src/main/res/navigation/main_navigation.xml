@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/instruction_destination"
-        android:name="com.udacity.shoestore.Instructions.InstructionFragment"
+        android:name="com.udacity.shoestore.instructions.InstructionFragment"
         android:label="fragment_instruction_destination"
         tools:layout="@layout/fragment_instruction_destination">
         <action

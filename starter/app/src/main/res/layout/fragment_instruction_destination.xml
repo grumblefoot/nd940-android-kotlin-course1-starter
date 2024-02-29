@@ -11,10 +11,16 @@ Create a new Instruction destination that includes:
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.instructions.InstructionViewModel" />
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Instructions.InstructionFragment">
+        tools:context=".instructions.InstructionFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +45,8 @@ Create a new Instruction destination that includes:
                 android:id="@+id/instruction_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/continue_button_text" />
+                android:text="@string/continue_button_text"
+                android:onClick="@{() -> viewModel.onContinueClicked()}"/>
         </LinearLayout>
 
     </FrameLayout>
